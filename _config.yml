@@ -11,3 +11,15 @@ name: Jiahao Zhang(张佳豪)
 email: zhangjiahao2022@stu.pku.edu.cn
 github: https://github.com/jhzhics
 phone: +86 15736751047
+
+collections:
+  experience:
+    output: true
+  publications:
+    output: true
+  awards:
+    output: true
+  works:
+    output: true
+  blog_posts:
+    output: true

@@ -22,10 +22,123 @@ layout: default
 </div>
 
 
-
-<br>
-<div class="description">
-
+<div class="block">
+    <h2>Bio</h2>
     {% capture description_content %}{% include_relative {{ site.description }} %}{% endcapture %}
     {{ description_content | markdownify }}
+</div>
+
+<br>
+<div class="block">
+    <h2>Works</h2>
+    {% if site.works %}
+        {% assign sorted_works = site.works | sort: 'date' | reverse %}
+        {% for work in sorted_works %}
+        <div class="work-item">
+            <div class="work-entry">
+                {% if work.image_url %}
+                    <img src="{{ work.image_url | relative_url }}" alt="Image for {{ work.title }}" class="work-image">
+                {% endif %}
+                <div class="work-text">
+                    <h3>
+                        {% if work.file_url %}
+                            <a href="{{ work.file_url | relative_url }}" title="Download or view {{ work.title }}">{{ work.title }}</a>
+                        {% else %}
+                            {{ work.title }}
+                        {% endif %}
+                    </h3>
+                    <p class="work-description">{{ work.description }}</p>
+                    {% if work.authors %}
+                        <p class="work-authors">Authors: {{ work.authors }}</p>
+                    {% endif %}
+                    {% if work.conference %}
+                        <p class="work-conference">Presented at: {{ work.conference }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No works to display.</p>
+    {% endif %}
+</div>
+
+
+
+
+<div class="block">
+    <h2>Experience</h2>
+    {% if site.experience %}
+        {% assign sorted_experience = site.experience | sort: 'date_start' | reverse %}
+        {% for experience in sorted_experience %}
+        <div class="item">
+            <h3>{{ experience.title }} at {{ experience.location }}</h3>
+            <p>{{ experience.date_start }} - {{ experience.date_end }}</p>
+            <p>{{ experience.content | markdownify }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No experiences to display.</p>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Awards</h2>
+    {% if site.awards %}
+        {% assign sorted_awards = site.awards | sort: 'receive_date' | reverse %}
+        {% for award in sorted_awards %}
+        <div class="item_compact" style="margin-bottom: 20px;">
+            <div style="display: flex; align-items: baseline; flex-wrap: wrap;">
+                {% if award.title %}
+                    {% if award.certificate_url %}
+                        <a href="{{ award.certificate_url }}" target="_blank">{{ award.title }}</a>
+                    {% else %}
+                        {{ award.title }}
+                    {% endif %}
+                {% endif %}
+                {% if award.receive_date %}
+                    <p style="margin-left: 10px;">{{ award.receive_date }}</p>
+                {% endif %}
+                {% if award.organization %}
+                    <p style="margin-left: 10px;">{{ award.organization }}</p>
+                {% endif %}
+            </div>
+            {% if award.content %}
+                <p>{{ award.content | markdownify }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No awards to display.</p>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Blog Posts</h2>
+    {% if site.blog_posts %}
+        {% assign sorted_posts = site.blog_posts | sort: 'date' | reverse %}
+        {% for post in sorted_posts %}
+        <div class="item">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.date | date: "%B %d, %Y" }}</p>
+            <p>{{ post.content | strip_html | truncatewords: 40, "" }}...</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts to display.</p>
+    {% endif %}
+</div>
+
+
+<div class="block">
+    <h2>Friendly Links</h2>
+    <ul>
+      {% if site.data.friendly_links %}
+        {% for link in site.data.friendly_links %}
+          <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+        {% endfor %}
+      {% else %}
+        <p>No friendly links to display.</p>
+      {% endif %}
+    </ul>
 </div>
