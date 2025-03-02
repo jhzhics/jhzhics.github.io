@@ -1,0 +1,81 @@
+/* Basic reset */
+* {
+    margin: 0.3%;
+    padding: auto;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Commonly used font for compatibility */
+    color: #000; /* Black text color */
+    line-height: 1.6;
+    background-color: #fff; /* White background color */
+    padding: 20px;
+    font-size: 100%
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000; /* Black for heading elements */
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #007bff; /* Light blue color for links */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Container and layout styles */
+.container {
+    width: 80%; /* Container width */
+    margin: 0 auto; /* Centering horizontally */
+    background-color: #fff; /* White background for the container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Table styles */
+table {
+    width: 100%; /* Full width tables */
+    border-collapse: collapse; /* Borders collapsed into a single border */
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc; /* Light grey borders for table cells */
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa; /* Very light grey for table headers */
+}
+
+/* Form styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff; /* Light blue background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* A darker shade of light blue */
+}

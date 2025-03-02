@@ -1,0 +1,32 @@
+
+.image_contact_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensures content is aligned to the left */
+    padding: 10px; /* Adds some padding around the content */
+}
+
+.avatar {
+    margin-left: 10%;
+    width: 30%;
+    height: auto;
+    display: block; /* Ensures the image is treated as a block-level element */
+    border: 1px solid #000; /* Black frame around the image */
+    object-fit: cover; /* Ensures the image covers the set dimensions */
+}
+.contact-info {
+    margin-left: 10%;
+}
+
+.description {
+    max-width: 60%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+.hometitle {
+    font-size: 32px; /* Makes the font size larger */
+    text-align: center; /* Centers the text horizontally */
+    margin-top: 10px; /* Adds space at the top */
+    margin-bottom: 20px; /* Adds space at the bottom */
+}

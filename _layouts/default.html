@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title | default: site.title | default: "Default Site Title" }}</title>
+    <link rel="stylesheet" href="/assets/default/style.css">
+    <link rel="icon" href="/assets/default/diamond.ico" type="image/x-icon">
+</head>
+<body>
+    <section>
+        {{ content }}
+    </section>
+</body>
+</html>

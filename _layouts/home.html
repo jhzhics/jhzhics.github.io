@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<link rel="stylesheet" type="text/css" href="/assets/home/style.css">
+
+
+<div class="hometitle">
+    {{ site.home_title}}
+</div> 
+
+<hr>
+<br>
+
+<div class="image_contact_container">
+    <img src="{{ site.avatar }}" alt="Avatar" class="avatar" />
+    <div class="contact-info">
+        <p>{{ site.name }}</p>
+        <p>Email: {{ site.email }}</p>
+        <p>Phone: {{ site.phone }}</p>
+        <p>GitHub: <a href="{{ site.github }}">{{ site.github }}</a></p>
+    </div>
+</div>
+
+
+
+<br>
+<div class="description">
+
+    {% capture description_content %}{% include_relative {{ site.description }} %}{% endcapture %}
+    {{ description_content | markdownify }}
+</div>
