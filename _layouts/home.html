@@ -16,7 +16,9 @@ layout: default
     <div class="contact-info">
         <p>{{ site.name }}</p>
         <p>Email: {{ site.email }}</p>
+        {% if site.phone %}
         <p>Phone: {{ site.phone }}</p>
+        {% endif %}
         <p>GitHub: <a href="{{ site.github }}">{{ site.github }}</a></p>
     </div>
 </div>
