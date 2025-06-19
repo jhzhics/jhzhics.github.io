@@ -32,7 +32,7 @@ layout: default
 
 <br>
 <div class="block">
-    <h2>Works</h2>
+    <h2>Pubs</h2>
     {% if site.works %}
         {% assign sorted_works = site.works | sort: 'date' | reverse %}
         {% for work in sorted_works %}
@@ -123,9 +123,9 @@ layout: default
         <div class="item">
             <h3>
                 {% if project.url %}
-                    <a href="{{ project.url }}" target="_blank">{{ project.title }}</a>
+                    <a href="{{ project.external_url }}" target="_blank">{{ project.title }}</a>
                 {% else %}
-                    {{ project.title }}
+                    <a href="{{ project.external_url | relative_url }}">{{ project.title }}</a>
                 {% endif %}
             </h3>
             {% if project.date %}
