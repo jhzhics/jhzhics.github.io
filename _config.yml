@@ -23,3 +23,11 @@ collections:
     output: true
   blog_posts:
     output: true
+  projects:
+    output: true
+
+navigation:
+  - title: Home
+    url: /
+  - title: Blogs
+    url: /blogs/

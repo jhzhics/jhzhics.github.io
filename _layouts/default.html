@@ -7,6 +7,16 @@
     <link rel="icon" href="/assets/default/diamond.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="nav-container">
+        <nav>
+            <ul>
+                {% for item in site.navigation %}
+                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
     <section>
         {{ content }}
     </section>

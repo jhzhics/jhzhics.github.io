@@ -116,21 +116,30 @@ layout: default
 </div>
 
 <div class="block">
-    <h2>Blog Posts</h2>
-    {% if site.blog_posts %}
-        {% assign sorted_posts = site.blog_posts | sort: 'date' | reverse %}
-        {% for post in sorted_posts %}
+    <h2>Projects</h2>
+    {% if site.projects %}
+        {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+        {% for project in sorted_projects %}
         <div class="item">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.date | date: "%B %d, %Y" }}</p>
-            <p>{{ post.content | strip_html | truncatewords: 40, "" }}...</p>
+            <h3>
+                {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank">{{ project.title }}</a>
+                {% else %}
+                    {{ project.title }}
+                {% endif %}
+            </h3>
+            {% if project.date %}
+                <p>{{ project.date | date: "%B %Y" }}</p>
+            {% endif %}
+            {% if project.description %}
+                <p>{{ project.description }}</p>
+            {% endif %}
         </div>
         {% endfor %}
     {% else %}
-        <p>No blog posts to display.</p>
+        <p>No projects to display.</p>
     {% endif %}
 </div>
-
 
 <div class="block">
     <h2>Friendly Links</h2>

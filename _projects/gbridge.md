@@ -1,0 +1,6 @@
+---
+title: GBridge
+date: 2024-01-07
+url: "https://github.com/jhzhics/GBridge.git"
+description: "P2P loan platform with AI assistant"
+---
