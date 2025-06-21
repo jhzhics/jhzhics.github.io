@@ -5,38 +5,11 @@ title: Jiahao Zhang
 home_title: Jiahao's Homepage
 avatar: assets/home/avatar.jpg
 description: assets/home/description.md
-cv: assets/home/CV.pdf
 
 name: Jiahao Zhang(张佳豪)
 email: zhangjiahao2022@stu.pku.edu.cn
 github: https://github.com/jhzhics
-# phone: +86 15736751047
-
-collections:
-  experience:
-    output: true
-  publications:
-    output: true
-  awards:
-    output: true
-  works:
-    output: true
-  blog_posts:
-    output: true
-  projects:
-    ### Configuration for Site
-title: Jiahao Zhang
-
-### Configuration for home
-home_title: Jiahao's Homepage
-avatar: assets/home/avatar.jpg
-description: assets/home/description.md
-cv: assets/home/CV.pdf
-
-name: Jiahao Zhang(张佳豪)
-email: zhangjiahao2022@stu.pku.edu.cn
-github: https://github.com/jhzhics
-# phone: +86 15736751047
+phone: +86-157-3675-1047
 
 collections:
   experience:
@@ -63,3 +36,5 @@ navigation:
     url: /
   - title: Blogs
     url: /blogs/
+  - title: CV
+    url: /assets/cv/jiahao_CV.pdf
