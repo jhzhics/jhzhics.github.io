@@ -49,9 +49,15 @@ layout: default
                             {{ work.title }}
                         {% endif %}
                     </h3>
-                    <p class="work-description">{{ work.description }}</p>
                     {% if work.authors %}
-                        <p class="work-authors">Authors: {{ work.authors }}</p>
+                        <p class="work-authors">Authors: <span id="authors-{{ forloop.index }}">{{ work.authors }}</span></p>
+                        <script>
+                            document.getElementById('authors-{{ forloop.index }}').innerHTML = 
+                                document.getElementById('authors-{{ forloop.index }}').innerHTML.replace(
+                                    /Jiahao Zhang/g, 
+                                    '<span style="text-decoration: underline;">Jiahao Zhang</span>'
+                                );
+                        </script>
                     {% endif %}
                     {% if work.conference %}
                         <p class="work-conference">Presented at: {{ work.conference }}</p>
