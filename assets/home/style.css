@@ -66,3 +66,11 @@
     font-size: 100%;
     flex: 1;
 }
+.experience_img {
+    height: calc(3em); /* 2x line height (assuming 1.2em default line-height) */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: top; /* Align to top of text line */
+    margin-left: 5%; /* Optional: small spacing from text */
+    object-fit: cover; /* Ensures image covers the area nicely */
+    border-radius: 4px; /* Optional: slight rounding for polish */
+}
